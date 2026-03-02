@@ -1,0 +1,39 @@
+.layout {
+  display: flex;
+}
+
+/* Page content */
+.main {
+  width: 1800px;
+  transition: margin-left 0.3s ease;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: white;
+}
+
+/* When sidebar is open */
+.main.shift {
+  margin-left: 260px;
+}
+
+/* Toggle button */
+.toggle-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  background: #162a5c;
+  color: white;
+  border: none;
+  padding: 4px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.toggle-btn.opened {
+  top: 5px;
+  left: 210px;
+  transition: 0.5s;
+  font-size: 22px;
+}
