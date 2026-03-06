@@ -1,6 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route ,Navigate } from "react-router-dom";
 import Layout from "./structure";
-import TextCompare from "./pageComponents/textCompare";
+import TextCompare from "./pageComponents/textCompare/textCompare";
 import VoiceText from "./pageComponents/voiceText";
 import TextVoice from "./pageComponents/TextVoice";
 import PdfTools from "./pageComponents/PDFConvertation";
@@ -11,6 +11,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route index element={<Navigate to="textCompare" replace />} />
           <Route path="spelling" element={<Spelling />} />
           <Route path="textCompare" element={<TextCompare />} />
           <Route path="voiceText" element={<VoiceText />} />
