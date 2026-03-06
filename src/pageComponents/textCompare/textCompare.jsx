@@ -11,7 +11,7 @@ function handleFirstTime(){
 
 }
   return (
-    <div>
+    <div >
     <HeaderTab firstTime={firstTimeforHeader}/>
     <BottomTab handleFirstTime={handleFirstTime} firstTime={firstTimeforHeader}/>
     </div>

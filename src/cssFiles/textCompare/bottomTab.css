@@ -5,6 +5,8 @@
   justify-content: center;
   align-items: center;
   padding-right: 35px;
+  border : 0px solid white;
+  padding-top : 50px;
 }
 
 .inputsBox.invisible{
@@ -57,7 +59,7 @@
   letter-spacing: 0px;
 }
 
-.removed {
+.deleted {
   background-color: #ffb3b3;
 }
 
@@ -97,9 +99,6 @@
   background-color: rgba(49, 49, 49, 0.658);
   transform: scale(1.03);
 }
-
-/* progress box */
-
 .progressBox {
   width: 500px;
   margin: 20px auto;
@@ -177,16 +176,17 @@
 }
 
   .betweenInputs {
-    padding-right:15px;
-    margin-top : 15px;
-    transform : rotate(90deg)  
+    display:flex;
+    align-items : center;
+    justify-content : center;
+
   }
 
   .input1Box,
   .input2Box {
     width: 90%;
     height: 300px;
-    margin-left: 25px;
+    margin-left:10px;
     min-height : auto;
   }
 
