@@ -115,6 +115,11 @@ const input2Ref = useRef(null);
   ref={input1Ref}
   className="input"
   contentEditable
+  onPaste={(e) => {
+    e.preventDefault();
+    const text = (e.clipboardData || window.clipboardData).getData('text');
+    document.execCommand('insertText', false, text);
+  }}
 ></div>
                 
                 </div>
@@ -137,6 +142,11 @@ const input2Ref = useRef(null);
   ref={input2Ref}
   className="input"
   contentEditable
+  onPaste={(e) => {
+    e.preventDefault();
+    const text = (e.clipboardData || window.clipboardData).getData('text');
+    document.execCommand('insertText', false, text);
+  }}
 ></div>
         </div>
     </div>
