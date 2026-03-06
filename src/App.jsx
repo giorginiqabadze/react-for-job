@@ -6,9 +6,10 @@ import TextVoice from "./pageComponents/TextVoice";
 import PdfTools from "./pageComponents/PDFConvertation";
 import Spelling from "./pageComponents/spelling";
 
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="textCompare" replace />} />

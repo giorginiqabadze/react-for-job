@@ -38,53 +38,53 @@ useEffect(() => {
 }, [isRunning]);
 
 function diffTexts(text1, text2) {
-  const arr1 = text1.split("");
-  const arr2 = text2.split("");
+  const a = text1.split("");
+  const b = text2.split("");
 
-  const result1 = [];
-  const result2 = [];
+  const m = a.length;
+  const n = b.length;
 
-  let i = 0;
-  let j = 0;
+  const dp = Array(m + 1)
+    .fill(null)
+    .map(() => Array(n + 1).fill(0));
 
-  while (i < arr1.length && j < arr2.length) {
-
-    if (arr1[i] === arr2[j]) {
-      result1.push(arr1[i]);
-      result2.push(arr2[j]);
-      i++;
-      j++;
-    } 
-    else {
-      // წაშლილი (პირველშია მაგრამ მეორეში არა)
-      if (!arr2.includes(arr1[i])) {
-        result1.push(
-          `<span className="deleted">${arr1[i]}</span>`
-        );
-        i++;
-      } 
-      // დამატებული (მეორეშია მაგრამ პირველში არა)
-      else {
-        result2.push(
-          `<span className="added">${arr2[j]}</span>`
-        );
-        j++;
+  // LCS matrix
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (a[i - 1] === b[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1] + 1;
+      } else {
+        dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
       }
     }
   }
 
-  while (i < arr1.length) {
-    result1.push(
-      `<span style="background-color:#ffb3b3">${arr1[i]}</span>`
-    );
-    i++;
-  }
+  let i = m;
+  let j = n;
 
-  while (j < arr2.length) {
-    result2.push(
-      `<span style="background-color:#b3ffb3">${arr2[j]}</span>`
-    );
-    j++;
+  const result1 = [];
+  const result2 = [];
+
+  while (i > 0 || j > 0) {
+
+    if (i > 0 && j > 0 && a[i - 1] === b[j - 1]) {
+      result1.unshift(a[i - 1]);
+      result2.unshift(b[j - 1]);
+      i--;
+      j--;
+    }
+
+    else if (j > 0 && (i === 0 || dp[i][j - 1] >= dp[i - 1][j])) {
+      result1.unshift(""); 
+      result2.unshift(`<span class="added" contenteditable="false">${b[j - 1]}</span>`);
+      j--;
+    }
+
+    else if (i > 0 && (j === 0 || dp[i][j - 1] < dp[i - 1][j])) {
+      result1.unshift(`<span class="deleted" contenteditable="false">${a[i - 1]}</span>`);
+      result2.unshift(""); 
+      i--;
+    }
   }
 
   return {
@@ -128,7 +128,9 @@ const input2Ref = useRef(null);
       },"@media (max-width:920px)": {
             visibility : "hidden"
       },"@media (max-width:700px)": {
+            paddingLeft : '0px',
             visibility : "visible",
+            transform : "rotate(90deg)"
       } }}/></div>
     <div className="input2Box">
 <div
