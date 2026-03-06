@@ -1,0 +1,118 @@
+.head{
+    height : 50px;
+    display : flex;
+    position : relative;
+    align-items : center;
+    padding : 20px;
+    border-bottom:1px solid #EDEDED;
+    
+}
+
+.headerBox1{
+    width : 500px;
+    display : flex;
+    align-items: center;
+}
+.headerCheckbox{
+    margin-left : 20px;
+}
+
+
+.headerBox2{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right:35px;
+    bottom:5px;
+    top:5px
+}
+
+.headButton{
+    padding : 10px 10px;
+    display : flex;
+    align-items : center;
+    justify-content: center;
+    gap : 5px;
+    border:none;
+    font-size: 15px;
+    color: white;
+  background-color: rgba(49, 49, 49, 0.582);
+    border-radius:8px;
+    cursor : pointer;
+    transition: 0.1s;
+
+}
+
+.headButton:active {
+    background-color: rgba(49, 49, 49, 0.658);
+  transform: scale(1.03); /* button slightly shrinks */
+}
+.headButton.enabled{
+  background-color:rgba(69, 113, 228)
+}
+.headButton.enabled:active{
+  background-color:rgba(69, 114, 228, 0.911)
+}
+
+.box{
+    display : flex;
+    flex-direction: row;
+    height: 500px;
+    border : 2px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+
+  .head {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 15px;
+  }
+
+  .headerBox1 {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    justify-content: left;
+  }
+
+  .headerCheckbox {
+    margin-left: 0;
+    transform: translateX(-25px);
+  }
+
+  .headerBox2 {
+    position: static;   /* remove absolute positioning */
+    width: 100%;
+    justify-content: left;
+
+  }
+
+  .headButton {
+    width: 90%;
+    justify-content: center;
+  }
+  .selectInput{
+    width: 90%;
+    height : 50px
+  }
+}
+
+
+

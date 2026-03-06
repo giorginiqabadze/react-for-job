@@ -1,5 +1,6 @@
 .layout {
   display: flex;
+  flex-direction: row;
 }
 
 /* Page content */
@@ -8,7 +9,7 @@
   transition: margin-left 0.3s ease;
   margin-top: 20px;
   margin-left: 20px;
-  padding: 20px;
+  padding-left : 20px;
   background-color: white;
 }
 
@@ -23,7 +24,7 @@
   top: 10px;
   left: 10px;
   font-size: 15px;
-  background: #162a5c;
+  background: #132450;
   color: white;
   border: none;
   padding: 4px 6px;
@@ -33,7 +34,91 @@
 }
 .toggle-btn.opened {
   top: 5px;
-  left: 210px;
+  left: 205px;
   transition: 0.5s;
   font-size: 22px;
 }
+.navLink{
+  height : 100px;
+  font-size:25px;
+  font-weight: bold;
+  display:flex;
+  justify-content: left;
+  align-items: center;
+  gap:10px;
+  border-bottom:1px solid #EDEDED
+
+}
+
+
+@media (max-width : 1200px){
+  .layout {
+
+  flex-direction: column;
+}
+.main {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .main.shift {
+    margin-left: 0; 
+  }
+
+  .toggle-btn.opened ,.toggle-btn {
+    position : absolute;
+    top : 475px;
+    left : 90%;
+    width : 60px;
+    height:60px;
+  }
+    .toggle-btn {
+    top : 80px;
+  }
+}
+
+
+
+
+@media (max-width : 740px){
+    .toggle-btn,.toggle-btn.opened {
+
+    left : 87%;
+
+  }
+  .toggle-btn.closed{
+    top: 60px;
+  }
+}
+@media (max-width : 550px){
+    .toggle-btn,.toggle-btn.opened {
+
+    left : 83%;
+
+  }
+}
+@media (max-width : 420px){
+    .toggle-btn,.toggle-btn.opened {
+
+    left : 80%;
+
+  }
+}
+
+@media (max-width : 420px){
+    .toggle-btn,.toggle-btn.opened {
+
+    left : 75%;
+
+  }
+}
+
+
+@media (max-width : 290px){
+    .toggle-btn,.toggle-btn.opened {
+
+    display : none
+
+  }
+}
+
