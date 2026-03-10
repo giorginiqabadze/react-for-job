@@ -44,15 +44,12 @@
 
 }
 
-.headButton:active {
-    background-color: rgba(49, 49, 49, 0.658);
-  transform: scale(1.03); /* button slightly shrinks */
-}
 .headButton.enabled{
-  background-color:rgba(69, 113, 228)
+  background-color:rgba(69, 113, 228);
+    background-color:rgba(69, 114, 228, 0.911)
 }
 .headButton.enabled:active{
-  background-color:rgba(69, 114, 228, 0.911)
+      transform: scale(1.05);
 }
 
 .box{
@@ -104,7 +101,7 @@
 
   }
 
-  .headButton {
+  .headButton{
     width: 90%;
     justify-content: center;
   }

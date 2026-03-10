@@ -41,7 +41,7 @@ export default function HeaderTab({firstTime}) {
   }}/>
       </div>
       <div className="headerBox2">
-      <button className={firstTime ? "headButton enabled" : "headButton"}><AddCircleOutlineOutlinedIcon/> ახლის გახსნა</button>
+      <button disabled={firstTime} className={firstTime ? "headButton enabled" : "headButton"}><AddCircleOutlineOutlinedIcon/> ახლის გახსნა</button>
       </div>
     </div>
   );
